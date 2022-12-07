@@ -1,0 +1,27 @@
+.register {
+  height: 100vh;
+  background-color: #272b30;
+  padding-top: 5rem;
+}
+.register img {
+  width: 70px;
+  border: 0;
+}
+.register .login {
+  background-color: #32383e;
+}
+.register .logo {
+  color: transparent !important;
+}
+.register input {
+  background-color: #1c1e22;
+  color: white;
+  border: 0 solid rgba(0, 0, 0, 0.6);
+}
+.register button {
+  background-color: #3a3f44;
+  border-color: #22241d;
+}
+.register button:hover {
+  background-color: #0d6efd;
+}/*# sourceMappingURL=register.component.css.map */

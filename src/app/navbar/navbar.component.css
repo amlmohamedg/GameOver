@@ -1,0 +1,16 @@
+img {
+  width: 70px;
+  filter: drop-shadow(1px 1px 3px);
+  border: 0;
+}
+
+nav {
+  background-color: #272b30 !important;
+  border-bottom: 1px solid rgba(28, 28, 28, 0.6);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  color: white;
+}
+nav .btn {
+  color: #4799eb;
+  border-color: #4799eb;
+}/*# sourceMappingURL=navbar.component.css.map */

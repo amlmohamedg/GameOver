@@ -1,0 +1,106 @@
+<div class="register d-flex justify-content-center align-items-center">
+<div class = "container mx-5">
+    
+    <div class="row mx-5">
+        
+        <div  class="col-lg-6  d-none d-lg-block bg-register-image p-0">
+            <img src="../../assets/imges/gaming.ebaf2ffc84f4451d.jpeg" class="w-100 h-100 " alt="">
+        </div>
+        <div class="col-lg-6 login py-4">
+
+            <div class="text-center ">
+                <!-- <img src="../../assets/imges/logo.png" class="mb-3 logo" alt=""> -->
+                <h4 class=" text-muted mb-4">
+                    Create My Account!
+                </h4>   
+            </div>
+
+
+          
+
+
+    <form  [formGroup]="registerForm" (ngSubmit)="registerUser(registerForm)"    class="px-4 mx-auto">
+
+        <div class="alert alert-warning" *ngIf="errorFromSignUp">
+            {{errorFromSignUp}}
+        </div>
+        
+        <div class="form-group mb-3 row">
+            <div class="col-sm-6 form-group mb-sm-0 mb-3">
+        <input type="text" class="form-control mb-1" id="firstname" placeholder="firstname" formControlName="first_name" >
+        <div *ngIf="registerForm.get('first_name')?.errors && registerForm.get('first_name')?.touched" class="alert alert-danger">
+            <p class="mb-0" *ngIf="registerForm.get('first_name')?.getError('required')">First name is required</p>
+            <p class="mb-0" *ngIf="registerForm.get('first_name')?.getError('minlength')"> min length is 3</p>
+            <p class="mb-0" *ngIf="registerForm.get('first_name')?.getError('maxlength')">max  length is 10 </p>
+        </div>
+            </div>
+
+            <div class="col-sm-6 form-group ">
+                <input type="text" class="form-control mb-1" id="lastName" placeholder="lastName" formControlName="last_name">
+                <div *ngIf="registerForm.get('last_name')?.errors&&registerForm.get('last_name')?.touched" class="alert alert-danger">
+                    <p *ngIf="registerForm.get('last_name')?.getError('required')">Last name is required</p>
+                    <p *ngIf="registerForm.get('last_name')?.getError('minlength')"> min length is 3</p>
+                    <p *ngIf="registerForm.get('last_name')?.getError('maxlength')">max  length is 10 </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group mb-3">
+            <input type="text" class="form-control mb-1" id="email" placeholder="email" formControlName="email">
+            <div *ngIf="registerForm.get('email')?.errors && registerForm.get('email')?.touched" class="alert alert-danger">
+                <p class="mb-0" *ngIf="registerForm.get('email')?.getError('required')">Email is required</p>
+                <p class="mb-0" *ngIf="registerForm.get('email')?.getError('email')">invalid email</p>
+            </div>
+        </div>
+        <div class="form-group mb-3">
+            
+            <input type="number" class="form-control mb-1" id="age" placeholder="age" formControlName="age">
+            <div *ngIf="registerForm.get('age')?.errors && registerForm.get('age')?.touched" class="alert alert-danger">
+                <p class="mb-0" *ngIf="registerForm.get('age')?.getError('required')">Age is required</p>
+                <p class="mb-0" *ngIf="registerForm.get('age')?.getError('min')">min is 15</p>
+                <p class="mb-0" *ngIf="registerForm.get('age')?.getError('max')">max is 30</p>
+            </div>
+        </div>
+
+        <div class="form-group mb-3">
+            
+            <input required   type="password" class="form-control mb-1" id="password" placeholder="password" formControlName="password" >
+            <div *ngIf="registerForm.get('password')?.errors && registerForm.get('password')?.touched" class="alert alert-danger">
+                <p class="mb-0" *ngIf="registerForm.get('password')?.getError('required')">Password is required</p>
+                <p class="mb-0" *ngIf="registerForm.get('password')?.getError('pattern')">invalid password</p>
+            </div>
+        </div>
+
+ <!-- <button [disabled]="!registerForm.valid"     class="btn text-white submitButton w-100 py-2">
+    <i *ngIf="isloading" class="fa fa-spinner fa-spin"></i>
+    
+    <span *ngIf="!isloading"> Create Account</span>
+</button>  -->
+
+
+<button *ngIf="isloading"  type="reset" class="btn py-2 w-100 text-white">
+    <i class="fa fa-spinner fa-spin text-center"></i>
+</button>
+
+<button *ngIf="!isloading" [disabled]="!registerForm.valid" class="btn py-2 w-100 text-white">
+    <span>Create Account</span>
+</button>
+
+    </form>
+
+<div class="text-center mt-2">
+    <hr>
+
+    <div class="text-muted ">
+        This site is protected by reCAPTCHA and the Google  
+        <a href="https://policies.google.com/privacy " class="text-secondary">Privacy Policy</a>
+        'and'
+        <a href="https://policies.google.com/terms" class="text-secondary">Terms of Service </a>
+        apply
+    </div>
+</div>
+
+</div>
+    </div>
+</div>
+</div>

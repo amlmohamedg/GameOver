@@ -1,0 +1,35 @@
+
+
+.register{
+    height: 100vh;
+    background-color: #272b30;
+    padding-top:5rem ;
+    img{
+        
+       width: 70px;
+        border: 0;
+    }
+    .login{
+        background-color:#32383e; 
+    }
+    .logo{
+        color: transparent !important;
+    }
+    input{
+        background-color: #1c1e22;
+        color: white;
+        border: 0 solid rgba(0,0,0,.6);
+    }
+    button{
+        background-color: #3a3f44;
+        border-color: #22241d;
+        &:hover{
+            background-color: #0d6efd;
+        }
+    }
+}
+
+
+
+
+

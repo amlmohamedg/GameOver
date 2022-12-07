@@ -1,0 +1,16 @@
+
+<section class="pt-5 item mt-4">
+    <div class="container">
+        <div class="row mt-3 g-3"  *ngIf="allGames.length">
+          <div class="col-md-3 " *ngFor="let game of allGames|slice:0:count*20">
+         <app-item [game]="game"></app-item>
+          </div>
+        </div>
+       <div class="text-center" *ngIf="count*1<allGames.length" (click)="count=count+1">
+        
+        <app-more-games></app-more-games>
+       </div>
+     
+        <app-loading *ngIf="allGames?.length==0"></app-loading>
+      </div>
+</section>
